@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgresql
+    restart: no
+    ports:
+      - "3306:3306"
+    environment:
+      DATABASE_URL: postgres://postgres:password@localhost:5432/dbname
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"

@@ -1,7 +1,11 @@
 {
   "name": "honotan",
-  "module": "index.ts",
-  "type": "module",
+  "scripts": {
+    "dev": "",
+    "api": "cd packages/api && bun run dev",
+    "web": "cd packages/web && bun run dev"
+  },
+  
   "devDependencies": {
     "@types/bun": "latest"
   },

@@ -1,11 +1,11 @@
 import { serveStatic } from '@hono/node-server/serve-static';
 import { swaggerUI } from '@hono/swagger-ui';
-import { Worker } from 'bullmq';
+// import { Worker } from 'bullmq';
 import { Hono } from 'hono';
 import { jwt } from 'hono/jwt';
 import env from '../lib/env';
 import { logger } from '../lib/logger';
-import { connection } from '../lib/queue';
+// import { connection } from '../lib/queue';
 import { UserRepository } from '../repository/user';
 import { UserService } from '../service/user';
 import { Tasker } from '../task/tasker';
@@ -75,14 +75,14 @@ export class Server {
     private registerWorker(userService: UserService) {
         const tasker = new Tasker(userService);
         const worker = tasker.setup();
-        if (worker.isRunning()) {
-            logger.info('Worker is running');
-        }
-        this.worker = worker;
+        // if (worker.isRunning()) {
+        //     logger.info('Worker is running');
+        // }
+        // this.worker = worker;
     }
 
     public async shutDownWorker() {
-        await this.worker?.close();
-        await connection.quit();
+        // await this.worker?.close();
+        // await connection.quit();
     }
 }

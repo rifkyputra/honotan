@@ -1,7 +1,7 @@
-import { Job, Worker } from 'bullmq';
+import { type Job, Worker } from 'bullmq';
 import { logger } from '../lib/logger';
-import { QUEUE, connection } from '../lib/queue';
-import { UserService } from '../service/user';
+// import { QUEUE, connection } from '../lib/queue';
+import type { UserService } from '../service/user';
 import sendWelcomeEmail from './sendWelcomeEmail';
 
 const TASK = {
@@ -19,25 +19,25 @@ class Tasker {
     }
 
     public setup() {
-        const worker = new Worker(QUEUE.default, this.processor, { connection });
+        // const worker = new Worker(QUEUE.default, this.processor, { connection });
 
-        worker.on('completed', (job: Job) => {
-            logger.info(`Job ${job.id} completed, task name: ${job.name}`);
-        });
+        // worker.on('completed', (job: Job) => {
+        //     logger.info(`Job ${job.id} completed, task name: ${job.name}`);
+        // });
 
-        worker.on('failed', (job: Job | undefined, error: Error) => {
-            if (job) {
-                logger.error(`Job ${job.id} failed, task name: ${job.name}, error: ${error.message}`);
-            } else {
-                logger.error(`Job failed, error: ${error.message}`);
-            }
-        });
+        // worker.on('failed', (job: Job | undefined, error: Error) => {
+        //     if (job) {
+        //         logger.error(`Job ${job.id} failed, task name: ${job.name}, error: ${error.message}`);
+        //     } else {
+        //         logger.error(`Job failed, error: ${error.message}`);
+        //     }
+        // });
 
-        worker.on('error', (err) => {
-            logger.error(err);
-        });
+        // worker.on('error', (err) => {
+        //     logger.error(err);
+        // });
 
-        return worker;
+        // return worker;
     }
 
     private async processor(job: Job) {

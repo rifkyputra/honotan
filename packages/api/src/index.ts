@@ -19,7 +19,7 @@ const app = new Hono();
 // Generic middlewares
 app.use(cors());
 app.use(tracing);
-app.use(compress());
+// app.use(compress());
 app.use(httpLogger());
 app.use(trimTrailingSlash());
 

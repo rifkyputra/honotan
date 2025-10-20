@@ -1,11 +1,12 @@
 {
   "name": "honotan",
   "scripts": {
-    "dev": "",
+    "dev:infra": "cd packages/api && bun run infra:up",
+    "dev": "bun run --filter '*' dev",
     "api": "cd packages/api && bun run dev",
-    "web": "cd packages/web && bun run dev",
+    "web": "cd packages/webapp && bun run dev",
     "ls:api": "cat packages/api/package.json | jq '.scripts'",
-    "ls:web": "cat packages/web/package.json | jq '.scripts'"
+    "ls:web": "cat packages/webapp/package.json | jq '.scripts'"
   },
   "devDependencies": {
     "@types/bun": "^1.3.0"

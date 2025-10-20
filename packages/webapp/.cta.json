@@ -1,0 +1,21 @@
+{
+  "projectName": "webapp",
+  "mode": "file-router",
+  "typescript": true,
+  "tailwind": true,
+  "packageManager": "bun",
+  "addOnOptions": {},
+  "git": true,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "biome",
+    "start",
+    "oRPC",
+    "form",
+    "shadcn",
+    "table",
+    "tanstack-query",
+    "store"
+  ]
+}

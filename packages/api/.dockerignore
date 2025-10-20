@@ -1,0 +1,8 @@
+node_modules
+.pnpm-debug.log
+bun.lockb
+dist
+.env
+.vscode
+.DS_Store
+.git
